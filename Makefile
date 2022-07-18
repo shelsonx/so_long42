@@ -6,7 +6,7 @@ RM 					= rm -f
 
 CC					= clang	
 
-CFLAGS 				= -Wall -Wextra -Werror
+#CFLAGS 				= -Wall -Wextra -Werror
 MINILIBX_FLAGS		= -lX11 -lXext -lmlx
 
 NAME				= so_long
