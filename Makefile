@@ -1,4 +1,4 @@
-SRCS				= first_example.c
+SRCS				= draw_with_minilibx.c
 
 OBJS				= $(SRCS:.c=.o)
 
@@ -12,7 +12,9 @@ MINILIBX_FLAGS		= -lX11 -lXext -lmlx
 NAME				= so_long
 
 all:				$(NAME)
-					
+
+run:				
+					./so_long				
 
 $(NAME):			$(OBJS)
 					$(CC) $(SRCS) $(CFLAGS) $(MINILIBX_FLAGS) -o $(NAME)
