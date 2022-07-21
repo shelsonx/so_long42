@@ -13,6 +13,8 @@
 # define RED_PIXEL 0xFF0000
 # define GREEN_PIXEL 0xFF00
 # define WHITE_PIXEL 0xFFFFFF
+# define YELLOW_PIXEL 0xFFFF00
+# define BLUE_PIXEL 0X0000FF
 
 typedef struct s_rect
 {
@@ -41,7 +43,10 @@ typedef struct s_data
 
 void	img_pix_put(t_img *img, int x, int y, int color)
 {
-	int		i;
+	char	*pixel;
+	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
+	*(int *)pixel = color;
+	/* int		i;
 	char	*pixel;
 	i = img->bpp - 8;
 	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
@@ -52,7 +57,7 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 		else
 			*pixel++ = (color >> (img->bpp -8 - i));
 		i -= 8;
-	}
+	} */
 }
 
 int render_rect(t_img *img, t_rect rect)
@@ -103,7 +108,10 @@ int	render(t_data *data)
 	render_background(&data->img, WHITE_PIXEL);
 	render_rect(&data->img, (t_rect) {WINDOW_WIDTH - 100, WINDOW_HEIGHT - 100,
 			100, 100, GREEN_PIXEL});
+	render_rect(&data->img, (t_rect) {WINDOW_WIDTH - 100, WINDOW_HEIGHT - 300,
+			100, 100, BLUE_PIXEL});
 	render_rect(&data->img, (t_rect) {0, 0, 100, 100, RED_PIXEL});
+	render_rect(&data->img, (t_rect) {WINDOW_WIDTH, 200, 100, 100, YELLOW_PIXEL});
 
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.mlx_img, 0, 0);
 	return (0);
@@ -125,7 +133,7 @@ int main(void)
 		return (MLX_ERROR);
 	}
 
-	/*Setuo hooks*/
+	/*Setup hooks*/
 	data.img.mlx_img = mlx_new_image(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
 	data.img.addr = mlx_get_data_addr(data.img.mlx_img, &data.img.bpp,
 			&data.img.line_len, &data.img.endian);
