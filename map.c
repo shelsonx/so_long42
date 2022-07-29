@@ -39,6 +39,32 @@ char	**generate_map(char *path)
 	return (map);
 }
 
+int	is_equal_colum_size(char **map)
+{
+	char	*first_line;
+	int		i;
+
+	first_line = map[0];
+	i = 1;
+	while (map[i])
+	{
+		if (ft_strlen(map[i]) != ft_strlen(first_line))
+			return (FALSE);
+		i++;
+	}
+	return (TRUE);
+}
+
+int	num_rows(char **tab)
+{
+	int	rows;
+
+	rows = 0;
+	while (tab[rows])
+		rows++;
+	return (rows);
+}
+
 void	free_tab(char **tab)
 {
 	int	i;
