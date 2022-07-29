@@ -1,0 +1,5 @@
+0 - empty space
+1 - wall
+C - collectible
+E - exit
+P - player

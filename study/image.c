@@ -28,6 +28,7 @@ int	close(int keysym, t_data *data)
 	{
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 		data->win_ptr = NULL;
+		exit(0);
 	}
 	return (0);
 }
@@ -57,7 +58,7 @@ int	main(void)
 	t_data data;
 	char	*relative_path = "img/background.xpm";
 	int		img_width;
-	int		img_height; 
+	int		img_height;
 	t_image	img;
 
 	data.mlx_ptr = mlx_init();
