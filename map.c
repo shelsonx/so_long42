@@ -55,25 +55,34 @@ int	is_equal_colum_size(char **map)
 	return (TRUE);
 }
 
-int	num_rows(char **tab)
+int	is_valid_wall(char **map)
 {
-	int	rows;
+	int		i;
+	char	*first_line;
+	char	*last_line;
 
-	rows = 0;
-	while (tab[rows])
-		rows++;
-	return (rows);
-}
-
-void	free_tab(char **tab)
-{
-	int	i;
-
+	first_line = map[0];
+	last_line = map[num_rows(map)-1];
 	i = 0;
-	while (tab[i])
+	while (map[i])
 	{
-		free(tab[i]);
+		if (map[i][0] != '1' || map[i][ft_strlen(map[i]) - 1] != '1')
+			return (FALSE);
 		i++;
 	}
-	free(tab);
+	i = 0;
+	while (first_line[i] && last_line[i])
+	{
+		if (first_line[i] != '1' || last_line[1] != '1')
+			return (FALSE);
+		i++;
+	}
+	return (TRUE);
+}
+
+int	is_valid_map(char **map)
+{
+	if (is_equal_colum_size(map) == 0 || is_valid_wall(map) == 0)
+		return (FALSE);
+	return (TRUE);
 }

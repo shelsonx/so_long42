@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/07/29 19:46:36 by sjhony-x         ###   ########.fr       */
+/*   Created: 2022/07/30 06:57:51 by sjhony-x          #+#    #+#             */
+/*   Updated: 2022/07/30 06:57:57 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# define TRUE 1
-# define FALSE 0
-# include <fcntl.h>
-# include "libs/libft/libft.h"
+#include "so_long.h"
 
-char	**generate_map(char *path);
-int		num_rows(char **tab);
-void	free_tab(char **tab);
-int		is_equal_colum_size(char **map);
-int		is_valid_wall(char **map);
-int		is_valid_map(char **map);
+void	free_tab(char **tab)
+{
+	int	i;
 
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
 
-#endif
+int	num_rows(char **map)
+{
+	int	rows;
+
+	rows = 0;
+	while (map[rows])
+		rows++;
+	return (rows);
+}
