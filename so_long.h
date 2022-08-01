@@ -23,6 +23,5 @@ void	free_tab(char **tab);
 int		is_equal_colum_size(char **map);
 int		is_valid_wall(char **map);
 int		is_valid_map(char **map);
-
-
+int	get_qtd_character(char **map, char character);
 #endif

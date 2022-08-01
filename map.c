@@ -80,9 +80,39 @@ int	is_valid_wall(char **map)
 	return (TRUE);
 }
 
+int	get_qtd_character(char **map, char character)
+{
+	int	row;
+	int	colum;
+	int	len_rows;
+	int	len_colums;
+	int	count_char;
+
+	count_char = 0;
+	row = 1;
+	len_rows = num_rows(map);
+	len_colums = ft_strlen(map[0]);
+	while (row < len_rows - 1)
+	{
+		colum = 1;
+		while (colum < len_colums - 1)
+		{
+			if (map[row][colum] == character)
+				count_char++;
+			colum++;
+		}
+		row++;
+	}
+	return (count_char);
+}
+
 int	is_valid_map(char **map)
 {
 	if (is_equal_colum_size(map) == 0 || is_valid_wall(map) == 0)
+		return (FALSE);
+	if (get_qtd_character(map, 'P') != 1)
+		return (FALSE);
+	if (get_qtd_character(map, 'E') < 1)
 		return (FALSE);
 	return (TRUE);
 }
