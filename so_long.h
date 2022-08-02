@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/02 15:39:36 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/02 18:27:07 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,17 @@
 
 # define SPRITE 32
 # define MLX_ERROR 1
+# define PATH_IMG_SPACE "assets/images/space.xpm"
+# define PATH_IMG_WALL "assets/images/wall.xpm"
+
+typedef struct s_image
+{
+	void	*addr;
+	int		width;
+	int		height;
+	int		x;
+	int		y;
+}	t_image;
 
 typedef struct s_window
 {
@@ -32,8 +43,10 @@ typedef struct s_window
 typedef struct s_game
 {
     void        *mlx_ptr;
+	char        **map;
     t_window    window;
-    char        **map;
+	t_image		wall;
+	t_image		space;
 }   t_game;
 
 char        **generate_map(char *path);
