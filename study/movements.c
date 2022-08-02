@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-# define WINDOW_WIDTH 800
-# define WINDOW_HEIGHT 600
+# define WINDOW_WIDTH 1024
+# define WINDOW_HEIGHT 300
 # define MLX_ERROR 1
 
 typedef struct s_image
@@ -50,9 +50,9 @@ void	render_background(void *mlx, void *win, t_image *image)
 		while (x < WINDOW_WIDTH)
 		{
 			mlx_put_image_to_window(mlx, win, image->addr, x, y);
-			x += 64;
+			x += 32;
 		}
-		y += 64;
+		y += 32;
 	}
 }
 
@@ -60,13 +60,13 @@ void	render_background(void *mlx, void *win, t_image *image)
 int	key_input(int key, t_data *data)
 {
 	if (key == XK_Left)
-		data->supertux.x -= 20;
+		data->supertux.x -= 32;
 	else if (key == XK_Right)
-		data->supertux.x += 20;
+		data->supertux.x += 32;
 	else if (key == XK_Down)
-		data->supertux.y += 20;
+		data->supertux.y += 32;
 	else if (key == XK_Up)
-		data->supertux.y -= 20;
+		data->supertux.y -= 32;
 
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
 
