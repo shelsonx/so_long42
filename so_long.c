@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 15:40:52 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/03 02:44:55 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/03 04:45:02 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,7 @@ int	main(int argc, char **argv)
 		return (MLX_ERROR);
 	init_window(&game);
 	load_images(&game);
-	render_map(&game);
-	game.wall.x = 0;
-	game.wall.y = 0;
-	game.space.x = 0;
-	game.space.y = 0;
-	game.tux_right.x = 0;
-	game.tux_right.y = 0;
-	game.coin_0.x = 0;
-	game.coin_0.y = 0;
-	game.exit.x = 0;
-	game.exit.y = 0;
-	//mlx_put_image_to_window(game.mlx_ptr, game.window.win_ptr, game.wall.addr, 0, 0);
+	mlx_loop_hook(game.mlx_ptr, &render_map, &game);
 	mlx_loop(game.mlx_ptr);
 	mlx_destroy_window(game.mlx_ptr, game.window.win_ptr);
 	free(game.mlx_ptr);

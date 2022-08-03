@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:45:37 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/03 03:08:15 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/03 03:26:53 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	render(t_game *game, t_image *image, int x, int y)
 	draw_image(game, image);
 }
 
-void	render_map(t_game *game)
+int	render_map(t_game *game)
 {
 	int	x;
 	int	y;
@@ -44,4 +44,5 @@ void	render_map(t_game *game)
 		}
 		x++;
 	}
+	return (0);
 }
