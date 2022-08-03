@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/03 13:52:43 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/03 14:46:46 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@
 # define PATH_IMG_TUX_RIGHT "assets/images/tux_right.xpm"
 # define PATH_IMG_COIN_0 "assets/images/coin_0.xpm"
 # define PATH_IMG_EXIT "assets/images/exit.xpm"
+
+# define KEY_ESC	0xff1b
+# define KEY_LEFT	0xff51
+# define KEY_UP		0xff52  
+# define KEY_RIGHT	0xff53
+# define KEY_DOWN	0xff54
+# define KEY_A		0x0041
+# define KEY_S		0x0053
+# define KEY_D		0x0044
+# define KEY_W		0x0057
 
 typedef struct s_image
 {
