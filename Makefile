@@ -1,4 +1,4 @@
-SRCS				= draw_with_minilibx.c
+SRCS				= image_utils.c launchers.c map_utils.c map.c renders.c so_long.c
 
 OBJS				= $(SRCS:.c=.o)
 
@@ -14,10 +14,11 @@ NAME				= so_long
 all:				$(NAME)
 
 run:				
-					./so_long				
+					valgrind --leak-check=full --show-leak-kinds=all \
+					--track-origins=yes ./so_long maps/another_4.ber
 
 $(NAME):			$(OBJS)
-					$(CC) $(SRCS) $(CFLAGS) $(MINILIBX_FLAGS) -o $(NAME)
+					$(CC) -g3 $(SRCS) libs/libft/libft.a $(CFLAGS) $(MINILIBX_FLAGS) -o $(NAME)
 
 
 clean:
