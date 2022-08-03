@@ -6,11 +6,18 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:45:37 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/02 22:28:35 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/03 03:08:15 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	render(t_game *game, t_image *image, int x, int y)
+{
+	image->x = y;
+	image->y = x;
+	draw_image(game, image);
+}
 
 void	render_map(t_game *game)
 {
@@ -24,35 +31,15 @@ void	render_map(t_game *game)
 		while (game->map[x][y])
 		{
 			if (game->map[x][y] == '1')
-			{
-				game->wall.x = y;
-				game->wall.y = x;
-				draw_image(game, &game->wall);
-			}
+				render(game, &game->wall, x, y);
 			if (game->map[x][y] == 'P')
-			{
-				game->tux_right.x = y;
-				game->tux_right.y = x;
-				draw_image(game, &game->tux_right);
-			}
+				render(game, &game->tux_right, x, y);
 			if (game->map[x][y] == '0')
-			{
-				game->space.x = y;
-				game->space.y = x;
-				draw_image(game, &game->space);
-			}
+				render(game, &game->space, x, y);
 			if (game->map[x][y] == 'C')
-			{
-				game->coin_0.x = y;
-				game->coin_0.y = x;
-				draw_image(game, &game->coin_0);
-			}
+				render(game, &game->coin_0, x, y);
 			if (game->map[x][y] == 'E')
-			{
-				game->exit.x = y;
-				game->exit.y = x;
-				draw_image(game, &game->exit);
-			}
+				render(game, &game->exit, x, y);
 			y++;
 		}
 		x++;
