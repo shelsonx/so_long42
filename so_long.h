@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/02 22:10:19 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/02 22:26:01 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define PATH_IMG_WALL "assets/images/wall.xpm"
 # define PATH_IMG_TUX_RIGHT "assets/images/tux_right.xpm"
 # define PATH_IMG_COIN_0 "assets/images/coin_0.xpm"
+# define PATH_IMG_EXIT "assets/images/exit.xpm"
 
 typedef struct s_image
 {
@@ -51,6 +52,8 @@ typedef struct s_game
 	t_image		space;
 	t_image		tux_right;
 	t_image		coin_0;
+	t_image		exit;
+
 }   t_game;
 
 char        **generate_map(char *path);

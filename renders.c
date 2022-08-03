@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:45:37 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/02 22:17:53 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/02 22:28:35 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	render_map(t_game *game)
 				game->tux_right.y = x;
 				draw_image(game, &game->tux_right);
 			}
-			if (game->map[x][y] == '0' || game->map[x][y] == 'E')
+			if (game->map[x][y] == '0')
 			{
 				game->space.x = y;
 				game->space.y = x;
@@ -46,6 +46,12 @@ void	render_map(t_game *game)
 				game->coin_0.x = y;
 				game->coin_0.y = x;
 				draw_image(game, &game->coin_0);
+			}
+			if (game->map[x][y] == 'E')
+			{
+				game->exit.x = y;
+				game->exit.y = x;
+				draw_image(game, &game->exit);
 			}
 			y++;
 		}
