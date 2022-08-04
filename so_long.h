@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/03 14:46:46 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/03 21:04:48 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void		draw_image(t_game *game, t_image *img);
 
 //renders
 int			render_map(t_game *game);
+void		render(t_game *game, t_image *image, int x, int y);
+
 
 #endif
