@@ -86,9 +86,16 @@ void		draw_image(t_game *game, t_image *img);
 int			render_map(t_game *game);
 
 //events
+int			events(int key, t_game *game);
+
+//events keys
 void		down(t_game *game);
 void		up(t_game *game);
 void		right(t_game *game);
 void		left(t_game *game);
+void		close_win(t_game *game);
+
+//events utils
+void		swap_play_for_space(t_game *game, char coord, int move);
 
 #endif
