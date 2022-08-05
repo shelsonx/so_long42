@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 18:02:59 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/05 18:31:44 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,5 @@ void		close_win(t_game *game);
 
 //events utils
 void		swap_play_for_space(t_game *game, char coord, int move);
-
+void		finalize_player(t_game *game);
 #endif

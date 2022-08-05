@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:25:13 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 13:25:17 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/05 18:28:58 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,9 @@ void	swap_play_for_space(t_game *game, char coord, int move)
 	}
 	game->map[old_pos_x][old_pos_y] = '0';
 	game->map[game->tux_right.x][game->tux_right.y] = 'P';
+}
+
+void	finalize_player(t_game *game)
+{
+	game->map[game->tux_right.x][game->tux_right.y] = '0';
 }

@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:36:49 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 18:04:17 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/05 18:42:00 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,13 @@ void	close_win(t_game *game)
 
 void	down(t_game *game)
 {
-	if (game->map[game->tux_right.x + 1][game->tux_right.y] != '1' &&
+	if (game->map[game->tux_right.x + 1][game->tux_right.y] == 'E' &&
+			game->collectibles == 0)
+	{
+		finalize_player(game);
+		close_win(game);
+	}
+	else if (game->map[game->tux_right.x + 1][game->tux_right.y] != '1' &&
 			game->map[game->tux_right.x + 1][game->tux_right.y] != 'E')
 	{
 		if (game->map[game->tux_right.x + 1][game->tux_right.y] == 'C')
@@ -33,7 +39,13 @@ void	down(t_game *game)
 
 void	up(t_game *game)
 {
-	if (game->map[game->tux_right.x - 1][game->tux_right.y] != '1' &&
+	if (game->map[game->tux_right.x - 1][game->tux_right.y] == 'E' &&
+			game->collectibles == 0)
+	{
+		finalize_player(game);
+		close_win(game);
+	}
+	else if (game->map[game->tux_right.x - 1][game->tux_right.y] != '1' &&
 			game->map[game->tux_right.x - 1][game->tux_right.y] != 'E')
 	{
 		if (game->map[game->tux_right.x - 1][game->tux_right.y] == 'C')
@@ -45,7 +57,14 @@ void	up(t_game *game)
 
 void	right(t_game *game)
 {
-	if (game->map[game->tux_right.x][game->tux_right.y + 1] != '1' &&
+	if (game->map[game->tux_right.x][game->tux_right.y + 1] == 'E' &&
+			game->collectibles == 0)
+	{
+		game->moves++;
+		finalize_player(game);
+		close_win(game);
+	}
+	else if (game->map[game->tux_right.x][game->tux_right.y + 1] != '1' &&
 			game->map[game->tux_right.x][game->tux_right.y + 1] != 'E')
 	{
 		if (game->map[game->tux_right.x][game->tux_right.y + 1] == 'C')
@@ -57,7 +76,13 @@ void	right(t_game *game)
 
 void	left(t_game *game)
 {
-	if (game->map[game->tux_right.x][game->tux_right.y - 1] != '1' &&
+	if (game->map[game->tux_right.x][game->tux_right.y - 1] == 'E' &&
+			game->collectibles == 0)
+	{
+		finalize_player(game);
+		close_win(game);
+	}
+	else if (game->map[game->tux_right.x][game->tux_right.y - 1] != '1' &&
 			game->map[game->tux_right.x][game->tux_right.y - 1] != 'E')
 	{
 		if (game->map[game->tux_right.x][game->tux_right.y - 1] == 'C')
