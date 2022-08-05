@@ -33,6 +33,8 @@ int	main(int argc, char **argv)
 		return (MLX_ERROR);
 	init_window(&game);
 	load_images(&game);
+	//inicialize variables...
+	game.moves = 0;
 	mlx_hook(game.window.win_ptr, 2, 1L<<0, &events, &game);
 	mlx_hook(game.window.win_ptr, 17, 0, &exit_game, &game);
 	mlx_expose_hook(game.window.win_ptr, &render_map, &game);

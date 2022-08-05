@@ -59,7 +59,7 @@ typedef struct s_game
 {
 	void		*mlx_ptr;
 	char		**map;
-	int			score;
+	int			moves;
 	int			collectible;
 	int			count_collectible;
 	t_window	window;

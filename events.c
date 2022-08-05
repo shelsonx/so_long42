@@ -25,5 +25,6 @@ int	events(int key, t_game *game)
 	else if (key == KEY_LEFT || key == KEY_A)
 		left(game);
 	render_map(game);
+	ft_printf("moves: %d\n", game->moves);
 	return (0);
 }

@@ -23,26 +23,38 @@ void	down(t_game *game)
 {
 	if (game->map[game->tux_right.x + 1][game->tux_right.y] != '1' &&
 			game->map[game->tux_right.x + 1][game->tux_right.y] != 'E')
+	{
 		swap_play_for_space(game, 'x', INCREMENT);
+		game->moves++;
+	}
 }
 
 void	up(t_game *game)
 {
 	if (game->map[game->tux_right.x - 1][game->tux_right.y] != '1' &&
 			game->map[game->tux_right.x - 1][game->tux_right.y] != 'E')
+	{
 		swap_play_for_space(game, 'x', DECREMENT);
+		game->moves++;
+	}
 }
 
 void	right(t_game *game)
 {
 	if (game->map[game->tux_right.x][game->tux_right.y + 1] != '1' &&
 			game->map[game->tux_right.x][game->tux_right.y + 1] != 'E')
+	{
 		swap_play_for_space(game, 'y', INCREMENT);
+		game->moves++;
+	}
 }
 
 void	left(t_game *game)
 {
 	if (game->map[game->tux_right.x][game->tux_right.y - 1] != '1' &&
 			game->map[game->tux_right.x][game->tux_right.y - 1] != 'E')
+	{
 		swap_play_for_space(game, 'y', DECREMENT);
+		game->moves++;
+	}
 }
