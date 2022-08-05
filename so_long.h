@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 05:55:33 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/05 18:02:59 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,7 @@ typedef struct s_game
 	void		*mlx_ptr;
 	char		**map;
 	int			moves;
-	int			collectible;
-	int			count_collectible;
+	int			collectibles;
 	t_window	window;
 	t_image		wall;
 	t_image		space;

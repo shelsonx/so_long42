@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 04:37:29 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 05:36:05 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/05 18:03:57 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	events(int key, t_game *game)
 		left(game);
 	render_map(game);
 	ft_printf("moves: %d\n", game->moves);
+	ft_printf("collectibles: %d\n", game->collectibles);
 	return (0);
 }
