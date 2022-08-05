@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 19:50:47 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/05 21:04:41 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@
 # define MLX_ERROR 1
 # define PATH_IMG_SPACE "assets/images/space.xpm"
 # define PATH_IMG_WALL "assets/images/wall.xpm"
-# define PATH_IMG_TUX_RIGHT "assets/images/tux_right.xpm"
 # define PATH_IMG_COIN_0 "assets/images/coin_0.xpm"
 # define PATH_IMG_EXIT "assets/images/exit.xpm"
+# define PATH_IMG_TUX_RIGHT "assets/images/tux_right.xpm"
+# define PATH_IMG_TUX_LEFT "assets/images/tux_left.xpm"
+# define PATH_IMG_TUX_UP "assets/images/tux_up.xpm"
+# define PATH_IMG_TUX_DOWN "assets/images/tux_down.xpm"
 
 # define KEY_ESC		0xff1b
 # define KEY_LEFT		0xff51
@@ -81,6 +84,7 @@ void		init_window(t_game *game);
 void		load_images(t_game *game);
 void		draw_image(t_game *game, t_image *img);
 int			is_ext_valid(char *filename);
+void		load_img_pos_tux(t_game *game, char *path);
 
 
 //renders

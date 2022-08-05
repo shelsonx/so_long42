@@ -6,11 +6,19 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:32:55 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/03 02:49:55 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/05 21:05:15 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	load_img_pos_tux(t_game *game, char *path)
+{
+	mlx_destroy_image(game->mlx_ptr, game->tux_right.addr);
+	game->tux_right.addr = mlx_xpm_file_to_image(
+			game->mlx_ptr, path,
+			&game->tux_right.width, &game->tux_right.height);
+}
 
 void	load_images(t_game *game)
 {
