@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 18:31:44 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/05 19:50:47 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ t_window	get_window_size(char **map);
 void		init_window(t_game *game);
 void		load_images(t_game *game);
 void		draw_image(t_game *game, t_image *img);
+int			is_ext_valid(char *filename);
+
 
 //renders
 int			render_map(t_game *game);

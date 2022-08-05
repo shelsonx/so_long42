@@ -6,11 +6,22 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 06:57:51 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/02 15:47:26 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/05 19:56:18 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	is_ext_valid(char *filename)
+{
+	int	size;
+
+	size = ft_strlen(filename);
+	if (filename[size -1] != 'r' || filename[size -2] != 'e'
+		|| filename[size -3] != 'b' || filename[size -4] != '.')
+		return (0);
+	return (1);
+}
 
 void	free_tab(char **tab)
 {
