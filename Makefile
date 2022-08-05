@@ -1,4 +1,4 @@
-SRCS				= image_utils.c launchers.c map_utils.c map.c renders.c so_long.c
+SRCS				= image_utils.c launchers.c map_utils.c map.c renders.c so_long.c events.c
 
 OBJS				= $(SRCS:.c=.o)
 

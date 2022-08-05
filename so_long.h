@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/03 21:04:48 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/05 05:55:33 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 # define TRUE 1
 # define FALSE 0
+# define INCREMENT 1
+# define DECREMENT 0
 
 # define SPRITE 32
 # define MLX_ERROR 1
@@ -27,15 +29,15 @@
 # define PATH_IMG_COIN_0 "assets/images/coin_0.xpm"
 # define PATH_IMG_EXIT "assets/images/exit.xpm"
 
-# define KEY_ESC	0xff1b
-# define KEY_LEFT	0xff51
-# define KEY_UP		0xff52  
-# define KEY_RIGHT	0xff53
-# define KEY_DOWN	0xff54
-# define KEY_A		0x0041
-# define KEY_S		0x0053
-# define KEY_D		0x0044
-# define KEY_W		0x0057
+# define KEY_ESC		0xff1b
+# define KEY_LEFT		0xff51
+# define KEY_UP			0xff52  
+# define KEY_RIGHT		0xff53
+# define KEY_DOWN		0xff54
+# define KEY_A			0x0061
+# define KEY_S			0x0073
+# define KEY_D			0x0064
+# define KEY_W			0x0077
 
 typedef struct s_image
 {
@@ -57,6 +59,9 @@ typedef struct s_game
 {
 	void		*mlx_ptr;
 	char		**map;
+	int			score;
+	int			collectible;
+	int			count_collectible;
 	t_window	window;
 	t_image		wall;
 	t_image		space;
@@ -79,7 +84,11 @@ void		draw_image(t_game *game, t_image *img);
 
 //renders
 int			render_map(t_game *game);
-void		render(t_game *game, t_image *image, int x, int y);
 
+//events
+void		down(t_game *game);
+void		up(t_game *game);
+void		right(t_game *game);
+void		left(t_game *game);
 
 #endif
