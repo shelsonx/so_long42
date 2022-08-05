@@ -12,6 +12,12 @@
 
 #include "so_long.h"
 
+int	exit_game(t_game *game)
+{
+	close_win(game);
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_game game;
@@ -28,6 +34,7 @@ int	main(int argc, char **argv)
 	init_window(&game);
 	load_images(&game);
 	mlx_hook(game.window.win_ptr, 2, 1L<<0, &events, &game);
+	mlx_hook(game.window.win_ptr, 17, 0, &exit_game, &game);
 	mlx_expose_hook(game.window.win_ptr, &render_map, &game);
 	mlx_loop(game.mlx_ptr);
 	mlx_destroy_window(game.mlx_ptr, game.window.win_ptr);
