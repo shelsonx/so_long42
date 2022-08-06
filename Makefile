@@ -1,4 +1,4 @@
-SRCS				= image_utils.c launchers.c map_utils.c map.c renders.c so_long.c events.c events_utils.c events_keys.c game.c
+SRCS				= image_utils.c launchers.c map_utils.c map.c renders.c so_long.c events.c events_utils.c game.c
 
 OBJS				= $(SRCS:.c=.o)
 
@@ -15,7 +15,7 @@ all:				$(NAME)
 
 run:				
 					valgrind --leak-check=full --show-leak-kinds=all \
-					--track-origins=yes ./so_long maps/another_4.ber
+					--track-origins=yes ./so_long maps/my_map.ber
 
 $(NAME):			$(OBJS)
 					$(CC) -g3 $(SRCS) libs/libft/libft.a $(CFLAGS) $(MINILIBX_FLAGS) -o $(NAME)
