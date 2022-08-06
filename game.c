@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 04:50:47 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 14:36:00 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 15:51:59 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,18 @@ int	exit_game(t_game *game)
 	free(game->mlx_ptr);
 	exit(0);
 	return (0);
+}
+
+void	init_window(t_game *game)
+{
+	game->window = get_window_size(game->map);
+	game->window.win_ptr = mlx_new_window(
+			game->mlx_ptr, game->window.width, game->window.height, "So Long");
+	if (game->window.win_ptr == NULL)
+	{
+		free(game->window.win_ptr);
+		return ;
+	}
 }
 
 void	init_game(t_game *game)
