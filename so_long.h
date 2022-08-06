@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 14:54:00 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 20:21:32 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,19 +71,23 @@ typedef struct s_game
 	t_image		exit;
 }	t_game;
 
+//map
 char		**generate_map(char *path);
-int			num_rows(char **tab);
-void		free_tab(char **tab);
 int			is_equal_colum_size(char **map);
 int			is_valid_wall(char **map);
 int			is_valid_map(char **map);
 int			get_qtd_character(char **map, char character);
+
+//map utils
+int			num_rows(char **tab);
+void		free_tab(char **tab);
 t_window	get_window_size(char **map);
-void		init_window(t_game *game);
+int			is_ext_valid(char *filename);
+
+//image utils
+void		load_img_pos_tux(t_game *game, char *path);
 void		load_images(t_game *game);
 void		draw_image(t_game *game, t_image *img);
-int			is_ext_valid(char *filename);
-void		load_img_pos_tux(t_game *game, char *path);
 
 //renders
 int			render_map(t_game *game);
@@ -104,4 +108,6 @@ void		finalize_player(t_game *game);
 //game
 void		init_game(t_game *game);
 int			exit_game(t_game *game);
+void		init_window(t_game *game);
+
 #endif
