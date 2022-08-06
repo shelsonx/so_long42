@@ -1,5 +1,8 @@
-SRCS				= 	image_utils.c map_utils.c map.c renders.c so_long.c \
-						events.c events_utils.c game.c
+SRCS_FILES			= image_utils.c map_utils.c map.c renders.c so_long.c \
+							events.c events_utils.c game.c
+SRCS_DIR			= sources
+
+SRCS				= $(addprefix $(SRCS_DIR)/, $(SRCS_FILES))	
 
 OBJS				= $(SRCS:.c=.o)
 

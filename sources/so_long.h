@@ -6,15 +6,15 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 20:21:32 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 00:01:24 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include <fcntl.h>
-# include "libs/minilibx/mlx.h"
-# include "libs/libft/libft.h"
+# include "../libs/minilibx/mlx.h"
+# include "../libs/libft/libft.h"
 
 # define TRUE 1
 # define FALSE 0
