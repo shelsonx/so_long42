@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:32:55 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 15:10:24 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 15:20:41 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ void	load_images(t_game *game)
 void	draw_image(t_game *game, t_image *img)
 {
 	mlx_put_image_to_window(game->mlx_ptr, game->window.win_ptr,
-		img->addr, img->x * SPRITE, img->y * SPRITE);
+		img->addr, img->y * SPRITE, img->x * SPRITE);
 }

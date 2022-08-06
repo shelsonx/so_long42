@@ -6,24 +6,17 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:45:37 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 05:13:41 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 15:27:57 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	update_position(t_image *image, int x, int y)
+void	render(t_game *game, t_image *image, int x, int y)
 {
 	image->x = x;
 	image->y = y;
-}
-
-void	render(t_game *game, t_image *image, int x, int y)
-{
-	image->x = y;
-	image->y = x;
 	draw_image(game, image);
-	update_position(image, x, y);
 }
 
 int	render_map(t_game *game)
