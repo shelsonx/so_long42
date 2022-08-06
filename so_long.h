@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 05:09:42 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 14:54:00 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # define DECREMENT 0
 
 # define SPRITE 32
-# define MLX_ERROR 1
 # define PATH_IMG_SPACE "assets/images/space.xpm"
 # define PATH_IMG_WALL "assets/images/wall.xpm"
 # define PATH_IMG_COIN_0 "assets/images/coin_0.xpm"
@@ -86,7 +85,6 @@ void		draw_image(t_game *game, t_image *img);
 int			is_ext_valid(char *filename);
 void		load_img_pos_tux(t_game *game, char *path);
 
-
 //renders
 int			render_map(t_game *game);
 
@@ -98,9 +96,12 @@ void		down(t_game *game);
 void		up(t_game *game);
 void		right(t_game *game);
 void		left(t_game *game);
-int			exit_game(t_game *game);
 
 //events utils
 void		swap_play_for_space(t_game *game, char coord, int move);
 void		finalize_player(t_game *game);
+
+//game
+void		init_game(t_game *game);
+int			exit_game(t_game *game);
 #endif

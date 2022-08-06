@@ -15,7 +15,7 @@ all:				$(NAME)
 
 run:				
 					valgrind --leak-check=full --show-leak-kinds=all \
-					--track-origins=yes ./so_long maps/another_4.ber
+					--track-origins=yes ./so_long maps/map_def.txt
 
 $(NAME):			$(OBJS)
 					$(CC) -g3 $(SRCS) libs/libft/libft.a $(CFLAGS) $(MINILIBX_FLAGS) -o $(NAME)

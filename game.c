@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 04:50:47 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 05:09:50 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 14:36:00 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,19 @@ int	exit_game(t_game *game)
 	free(game->mlx_ptr);
 	exit(0);
 	return (0);
+}
+
+void	init_game(t_game *game)
+{
+	game->mlx_ptr = mlx_init();
+	if (game->mlx_ptr == NULL)
+		return ;
+	init_window(game);
+	load_images(game);
+	game->moves = 0;
+	game->collectibles = get_qtd_character(game->map, 'C');
+	mlx_hook(game->window.win_ptr, 2, 1L << 0, &events, game);
+	mlx_hook(game->window.win_ptr, 17, 0, &exit_game, game);
+	mlx_expose_hook(game->window.win_ptr, &render_map, game);
+	mlx_loop(game->mlx_ptr);
 }
