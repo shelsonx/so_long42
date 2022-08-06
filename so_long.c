@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 15:40:52 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 15:01:04 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 18:48:34 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (!is_ext_valid(argv[1]))
-			ft_printf("File Extension Invalid!\n");
+			ft_printf("Error\nFile Extension Invalid!\n");
 		else
 		{
 			game.map = generate_map(argv[1]);
 			if (!is_valid_map(game.map))
 			{
-				ft_printf("Map inválido!\n");
+				ft_printf("Error\nMap inválido!\n");
 				free_tab(game.map);
 				return (1);
 			}
@@ -33,6 +33,6 @@ int	main(int argc, char **argv)
 		}
 	}
 	else
-		ft_printf("Argument invalid!\n");
+		ft_printf("Error\nArgument invalid!\n");
 	return (0);
 }
