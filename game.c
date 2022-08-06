@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events.c                                           :+:      :+:    :+:   */
+/*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 04:37:29 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 04:32:11 by sjhony-x         ###   ########.fr       */
+/*   Created: 2022/08/06 04:50:47 by sjhony-x          #+#    #+#             */
+/*   Updated: 2022/08/06 04:51:04 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	events(int key, t_game *game)
+int	exit_game(t_game *game)
 {
-	if (key == KEY_ESC)
-		exit_game(game);
-	else if (key == KEY_DOWN || key == KEY_S)
-		down(game);
-	else if (key == KEY_UP || key == KEY_W)
-		up(game);
-	else if (key == KEY_RIGHT || key == KEY_D)
-		right(game);
-	else if (key == KEY_LEFT || key == KEY_A)
-		left(game);
-	render_map(game);
-	ft_printf("moves: %d\n", game->moves);
+	free_tab(game->map);
+	mlx_destroy_image(game->mlx_ptr, game->tux_right.addr);
+	mlx_destroy_image(game->mlx_ptr, game->coin_0.addr);
+	mlx_destroy_image(game->mlx_ptr, game->exit.addr);
+	mlx_destroy_image(game->mlx_ptr, game->space.addr);
+	mlx_destroy_image(game->mlx_ptr, game->wall.addr);
+	mlx_destroy_window(game->mlx_ptr, game->window.win_ptr);
+	mlx_destroy_display(game->mlx_ptr);
+	free(game->mlx_ptr);
+	exit(0);
 	return (0);
 }

@@ -6,17 +6,11 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 15:40:52 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 21:12:19 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 04:49:22 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	exit_game(t_game *game)
-{
-	close_win(game);
-	return (0);
-}
 
 int	main(int argc, char **argv)
 {
@@ -40,8 +34,5 @@ int	main(int argc, char **argv)
 	mlx_hook(game.window.win_ptr, 17, 0, &exit_game, &game);
 	mlx_expose_hook(game.window.win_ptr, &render_map, &game);
 	mlx_loop(game.mlx_ptr);
-	mlx_destroy_window(game.mlx_ptr, game.window.win_ptr);
-	free(game.mlx_ptr);
-	free_tab(game.map);
 	return (0);
 }
