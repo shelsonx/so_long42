@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:45:37 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 01:35:35 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 05:13:41 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	render_map(t_game *game)
 			if (game->map[x][y] == '1')
 				render(game, &game->wall, x, y);
 			if (game->map[x][y] == 'P')
-				render(game, &game->tux_right, x, y);
+				render(game, &game->tux, x, y);
 			if (game->map[x][y] == '0')
 				render(game, &game->space, x, y);
 			if (game->map[x][y] == 'C')

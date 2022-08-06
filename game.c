@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 04:50:47 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 04:51:04 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 05:09:50 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	exit_game(t_game *game)
 {
 	free_tab(game->map);
-	mlx_destroy_image(game->mlx_ptr, game->tux_right.addr);
+	mlx_destroy_image(game->mlx_ptr, game->tux.addr);
 	mlx_destroy_image(game->mlx_ptr, game->coin_0.addr);
 	mlx_destroy_image(game->mlx_ptr, game->exit.addr);
 	mlx_destroy_image(game->mlx_ptr, game->space.addr);

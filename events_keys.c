@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:36:49 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 04:31:35 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/06 05:11:54 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	down(t_game *game)
 {
-	if (game->map[game->tux_right.x + 1][game->tux_right.y] == 'E' &&
+	if (game->map[game->tux.x + 1][game->tux.y] == 'E' &&
 			game->collectibles == 0)
 	{
 		finalize_player(game);
 		exit_game(game);
 	}
-	else if (game->map[game->tux_right.x + 1][game->tux_right.y] != '1' &&
-			game->map[game->tux_right.x + 1][game->tux_right.y] != 'E')
+	else if (game->map[game->tux.x + 1][game->tux.y] != '1' &&
+			game->map[game->tux.x + 1][game->tux.y] != 'E')
 	{
-		if (game->map[game->tux_right.x + 1][game->tux_right.y] == 'C')
+		if (game->map[game->tux.x + 1][game->tux.y] == 'C')
 			game->collectibles--;
 		load_img_pos_tux(game, PATH_IMG_TUX_DOWN);
 		swap_play_for_space(game, 'x', INCREMENT);
@@ -33,16 +33,16 @@ void	down(t_game *game)
 
 void	up(t_game *game)
 {
-	if (game->map[game->tux_right.x - 1][game->tux_right.y] == 'E' &&
+	if (game->map[game->tux.x - 1][game->tux.y] == 'E' &&
 			game->collectibles == 0)
 	{
 		finalize_player(game);
 		exit_game(game);
 	}
-	else if (game->map[game->tux_right.x - 1][game->tux_right.y] != '1' &&
-			game->map[game->tux_right.x - 1][game->tux_right.y] != 'E')
+	else if (game->map[game->tux.x - 1][game->tux.y] != '1' &&
+			game->map[game->tux.x - 1][game->tux.y] != 'E')
 	{
-		if (game->map[game->tux_right.x - 1][game->tux_right.y] == 'C')
+		if (game->map[game->tux.x - 1][game->tux.y] == 'C')
 			game->collectibles--;
 		load_img_pos_tux(game, PATH_IMG_TUX_UP);
 		swap_play_for_space(game, 'x', DECREMENT);
@@ -52,17 +52,17 @@ void	up(t_game *game)
 
 void	right(t_game *game)
 {
-	if (game->map[game->tux_right.x][game->tux_right.y + 1] == 'E' &&
+	if (game->map[game->tux.x][game->tux.y + 1] == 'E' &&
 			game->collectibles == 0)
 	{
 		game->moves++;
 		finalize_player(game);
 		exit_game(game);
 	}
-	else if (game->map[game->tux_right.x][game->tux_right.y + 1] != '1' &&
-			game->map[game->tux_right.x][game->tux_right.y + 1] != 'E')
+	else if (game->map[game->tux.x][game->tux.y + 1] != '1' &&
+			game->map[game->tux.x][game->tux.y + 1] != 'E')
 	{
-		if (game->map[game->tux_right.x][game->tux_right.y + 1] == 'C')
+		if (game->map[game->tux.x][game->tux.y + 1] == 'C')
 			game->collectibles--;
 		load_img_pos_tux(game, PATH_IMG_TUX_RIGHT);
 		swap_play_for_space(game, 'y', INCREMENT);
@@ -72,16 +72,16 @@ void	right(t_game *game)
 
 void	left(t_game *game)
 {
-	if (game->map[game->tux_right.x][game->tux_right.y - 1] == 'E' &&
+	if (game->map[game->tux.x][game->tux.y - 1] == 'E' &&
 			game->collectibles == 0)
 	{
 		finalize_player(game);
 		exit_game(game);
 	}
-	else if (game->map[game->tux_right.x][game->tux_right.y - 1] != '1' &&
-			game->map[game->tux_right.x][game->tux_right.y - 1] != 'E')
+	else if (game->map[game->tux.x][game->tux.y - 1] != '1' &&
+			game->map[game->tux.x][game->tux.y - 1] != 'E')
 	{
-		if (game->map[game->tux_right.x][game->tux_right.y - 1] == 'C')
+		if (game->map[game->tux.x][game->tux.y - 1] == 'C')
 			game->collectibles--;
 		load_img_pos_tux(game, PATH_IMG_TUX_LEFT);
 		swap_play_for_space(game, 'y', DECREMENT);
