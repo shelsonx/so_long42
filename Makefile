@@ -10,11 +10,11 @@ SRCS_DIR_BONUS		= sources_bonus
 
 SRCS				= $(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
 
-SRCS_BONUS			= $(addprefix $(SRCS_DIR_BONUS)/, $(SRCS_FILES))
+SRCS_BONUS			= $(addprefix $(SRCS_DIR_BONUS)/, $(SRCS_FILES_BONUS))
 
 OBJS				= $(SRCS:.c=.o)
 
-OBJS_BONUS			= $(SRCS:.c=.o)
+OBJS_BONUS			= $(SRCS_BONUS:.c=.o)
 
 LIBFT_DIR			= ./libs/libft
 MINILIBX_DIR		= ./libs/minilibx
@@ -52,10 +52,12 @@ clean:
 					$(MAKE) clean -C $(LIBFT_DIR)
 					$(MAKE) clean -C $(MINILIBX_DIR)
 					$(RM) $(OBJS)
+					$(RM) $(OBJS_BONUS)
 
 fclean:				clean
 					$(MAKE) fclean -C $(LIBFT_DIR)
 					$(RM) $(NAME)
+					$(RM) $(NAME_BONUS)
 
 re:					fclean all
 

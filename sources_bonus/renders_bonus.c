@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   renders.c                                          :+:      :+:    :+:   */
+/*   renders_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:45:37 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 15:57:40 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 23:02:07 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
+
+void	render_moves(t_game *game)
+{
+	char	*moves;
+
+	moves = ft_itoa(game->moves);
+	mlx_put_image_to_window(game->mlx_ptr, game->window.win_ptr,
+		game->image_bonus.back_move.addr, game->window.width / 2 - 32, 10);
+	mlx_string_put(game->mlx_ptr, game->window.win_ptr,
+		game->window.width / 2 + 5, 22, 0xFFFFFF, moves);
+	free(moves);
+}
 
 void	render(t_game *game, t_image *image, int x, int y)
 {
@@ -44,5 +56,6 @@ int	render_map(t_game *game)
 		}
 		x++;
 	}
+	render_moves(game);
 	return (0);
 }

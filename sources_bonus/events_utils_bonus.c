@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events_utils.c                                     :+:      :+:    :+:   */
+/*   events_utils_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:25:13 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 05:12:24 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:00:16 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	swap_play_for_space(t_game *game, char coord, int move)
 {

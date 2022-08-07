@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   image_utils.c                                      :+:      :+:    :+:   */
+/*   image_utils_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:32:55 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 15:56:02 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 21:31:27 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	load_img_pos_tux(t_game *game, char *path)
 {
@@ -36,6 +36,9 @@ void	load_images(t_game *game)
 			&game->coin.width, &game->coin.height);
 	game->door.addr = mlx_xpm_file_to_image(
 			game->mlx_ptr, PATH_IMG_EXIT,
+			&game->door.width, &game->door.height);
+	game->image_bonus.back_move.addr = mlx_xpm_file_to_image(
+			game->mlx_ptr, PATH_IMG_BACK_MOVE,
 			&game->door.width, &game->door.height);
 }
 

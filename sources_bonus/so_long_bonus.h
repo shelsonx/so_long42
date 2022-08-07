@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 17:10:39 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:35:48 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # define PATH_IMG_TUX_LEFT "assets/images/tux_left.xpm"
 # define PATH_IMG_TUX_UP "assets/images/tux_up.xpm"
 # define PATH_IMG_TUX_DOWN "assets/images/tux_down.xpm"
+# define PATH_IMG_BACK_MOVE "assets/images/back_move.xpm"
 
 # define KEY_ESC		0xff1b
 # define KEY_LEFT		0xff51
@@ -57,18 +58,24 @@ typedef struct s_window
 	int		height;
 }	t_window;
 
+typedef struct s_image_bonus
+{
+	t_image		back_move;
+}	t_image_bonus;
+
 typedef struct s_game
 {
-	void		*mlx_ptr;
-	char		**map;
-	int			moves;
-	int			collectibles;
-	t_window	window;
-	t_image		wall;
-	t_image		space;
-	t_image		tux;
-	t_image		coin;
-	t_image		door;
+	void			*mlx_ptr;
+	char			**map;
+	int				moves;
+	int				collectibles;
+	t_image_bonus	image_bonus;
+	t_window		window;
+	t_image			wall;
+	t_image			space;
+	t_image			tux;
+	t_image			coin;
+	t_image			door;
 }	t_game;
 
 //map
