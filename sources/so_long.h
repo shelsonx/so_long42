@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 15:51:44 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 16:41:57 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,6 @@ int			render_map(t_game *game);
 
 //events
 int			events(int key, t_game *game);
-
-//events keys
 void		down(t_game *game);
 void		up(t_game *game);
 void		right(t_game *game);
