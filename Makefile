@@ -17,14 +17,14 @@ RM 					= rm -f
 CC					= clang	
 
 CFLAGS 				= -Wall -Wextra -Werror
-MINILIBX_FLAGS		= -lX11 -lXext -lmlx
+MINILIBX_FLAGS		= -L. -lXext -L. -lX11
 
 NAME				= so_long
 
 all:				$(NAME)
 
 $(NAME):			$(LIBFT) $(MINILIBX) $(OBJS)
-					$(CC) -g3 $(OBJS) $(LIBFT) $(CFLAGS) $(MINILIBX_FLAGS) -o $(NAME)
+					$(CC) -g3 $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME)
 
 $(LIBFT):			$(LIBFT_DIR)
 					$(MAKE) -C $(LIBFT_DIR)
