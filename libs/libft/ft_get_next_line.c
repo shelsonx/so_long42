@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 22:05:47 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/06/25 16:27:59 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 16:11:16 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		get_line_size(char	*line);
 char	*join_read(int fd, char *line);
 char	*finally(char *first_str, char *second_str);
 
-char	*get_next_line(int fd)
+char	*ft_get_next_line(int fd)
 {
 	char		*line;
 	char		*new_line;

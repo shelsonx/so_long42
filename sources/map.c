@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 22:51:04 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 19:01:14 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 16:09:34 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ char	**generate_map(char *path)
 	if (fd == -1)
 		return (NULL);
 	lines = ft_strdup("");
-	line = get_next_line(fd);
+	line = ft_get_next_line(fd);
 	while (line)
 	{
 		tmp = lines;
 		lines = ft_strjoin(tmp, line);
 		free(line);
 		free(tmp);
-		line = get_next_line(fd);
+		line = ft_get_next_line(fd);
 	}
 	map = ft_split(lines, '\n');
 	free(lines);

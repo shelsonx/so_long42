@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:32:44 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/07/09 17:45:18 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 16:12:21 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*create_new_line(char *line, int line_size);
 int		get_line_size(char	*line);
 char	*join_read(int fd, char *line);
 char	*finally(char *first_str, char *second_str);
-char	*get_next_line(int fd);
+char	*ft_get_next_line(int fd);
 
 //FT_PRINTF
 int		ft_printf(const char *format, ...);
