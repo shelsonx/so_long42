@@ -1,10 +1,20 @@
 SRCS_FILES			= image_utils.c map_utils.c map.c renders.c so_long.c \
 							events.c events_utils.c game.c
+
+SRCS_FILES_BONUS	= image_utils_bonus.c map_utils_bonus.c map_bonus.c renders_bonus.c \
+						so_long_bonus.c events_bonus.c events_utils_bonus.c game_bonus.c
+
 SRCS_DIR			= sources
 
-SRCS				= $(addprefix $(SRCS_DIR)/, $(SRCS_FILES))	
+SRCS_DIR_BONUS		= sources_bonus
+
+SRCS				= $(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
+
+SRCS_BONUS			= $(addprefix $(SRCS_DIR_BONUS)/, $(SRCS_FILES))
 
 OBJS				= $(SRCS:.c=.o)
+
+OBJS_BONUS			= $(SRCS:.c=.o)
 
 LIBFT_DIR			= ./libs/libft
 MINILIBX_DIR		= ./libs/minilibx
@@ -20,11 +30,17 @@ CFLAGS 				= -Wall -Wextra -Werror
 MINILIBX_FLAGS		= -L. -lXext -L. -lX11
 
 NAME				= so_long
+NAME_BONUS			= so_long_bonus
 
 all:				$(NAME)
 
+bonus:				$(NAME_BONUS)
+
 $(NAME):			$(LIBFT) $(MINILIBX) $(OBJS)
 					$(CC) -g3 $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME)
+
+$(NAME_BONUS):		$(LIBFT) $(MINILIBX) $(OBJS_BONUS)
+					$(CC) -g3 $(CFLAGS) $(OBJS_BONUS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME_BONUS)
 
 $(LIBFT):			
 					$(MAKE) -C $(LIBFT_DIR)
