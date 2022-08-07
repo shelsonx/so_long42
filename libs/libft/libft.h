@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:32:44 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 16:12:21 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 16:28:41 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char	*ft_get_next_line(int fd);
 
 //FT_PRINTF
 int		ft_printf(const char *format, ...);
-char	*ptr_to_hex(unsigned long int n, int base);
+char	*ft_ptr_hex(unsigned long int n, int base);
 char	*ft_itoa_base(unsigned int n, int base, char character);
 char	*ft_utoa(unsigned int n);
 

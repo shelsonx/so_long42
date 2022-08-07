@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 04:59:57 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/07/02 04:33:09 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 16:28:08 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	ft_treat_args(int i, const char *format, va_list args)
 	else if (format[i] == 'X')
 		size += ft_putstr(ft_itoa_base(va_arg(args, unsigned int), 16, 'A'), 1);
 	else if (format[i] == 'p')
-		size += ft_putstr(ptr_to_hex(((long int) va_arg(args, void *)), 16), 1);
+		size += ft_putstr(ft_ptr_hex(((long int) va_arg(args, void *)), 16), 1);
 	return (size);
 }
 

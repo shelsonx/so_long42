@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ptr_to_hex.c                                       :+:      :+:    :+:   */
+/*   ft_ptr_to_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 18:49:53 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/07/02 04:40:36 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 16:28:53 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_utoa_u(unsigned long int n, int base)
 	return (dst);
 }
 
-char	*ptr_to_hex(unsigned long int n, int base)
+char	*ft_ptr_hex(unsigned long int n, int base)
 {
 	char	*initial;
 	char	*hex;
