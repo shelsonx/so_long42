@@ -26,10 +26,10 @@ all:				$(NAME)
 $(NAME):			$(LIBFT) $(MINILIBX) $(OBJS)
 					$(CC) -g3 $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME)
 
-$(LIBFT):			$(LIBFT_DIR)
+$(LIBFT):			
 					$(MAKE) -C $(LIBFT_DIR)
 
-$(MINILIBX):		$(MINILIBX_DIR)
+$(MINILIBX):		
 					$(MAKE) -C $(MINILIBX_DIR)
 					
 clean:
