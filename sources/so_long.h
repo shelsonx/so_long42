@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 00:01:24 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 15:51:44 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ typedef struct s_game
 	t_image		wall;
 	t_image		space;
 	t_image		tux;
-	t_image		coin_0;
-	t_image		exit;
+	t_image		coin;
+	t_image		door;
 }	t_game;
 
 //map

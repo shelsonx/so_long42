@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:45:37 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/06 15:27:57 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 15:57:40 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int	render_map(t_game *game)
 			if (game->map[x][y] == '0')
 				render(game, &game->space, x, y);
 			if (game->map[x][y] == 'C')
-				render(game, &game->coin_0, x, y);
+				render(game, &game->coin, x, y);
 			if (game->map[x][y] == 'E')
-				render(game, &game->exit, x, y);
+				render(game, &game->door, x, y);
 			y++;
 		}
 		x++;
