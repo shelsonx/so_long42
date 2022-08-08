@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:32:55 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 21:31:27 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/08 00:09:08 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,11 @@ void	load_images(t_game *game)
 			&game->door.width, &game->door.height);
 	game->image_bonus.back_move.addr = mlx_xpm_file_to_image(
 			game->mlx_ptr, PATH_IMG_BACK_MOVE,
-			&game->door.width, &game->door.height);
+			&game->image_bonus.back_move.width,
+			&game->image_bonus.back_move.height);
+	game->image_bonus.bomb.addr = mlx_xpm_file_to_image(
+			game->mlx_ptr, PATH_IMG_BOMB,
+			&game->image_bonus.bomb.width, &game->image_bonus.bomb.height);
 }
 
 void	draw_image(t_game *game, t_image *img)

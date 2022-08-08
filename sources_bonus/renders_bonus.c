@@ -6,11 +6,18 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:45:37 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 23:02:07 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/08 00:08:26 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
+
+void	render(t_game *game, t_image *image, int x, int y)
+{
+	image->x = x;
+	image->y = y;
+	draw_image(game, image);
+}
 
 void	render_moves(t_game *game)
 {
@@ -24,14 +31,26 @@ void	render_moves(t_game *game)
 	free(moves);
 }
 
-void	render(t_game *game, t_image *image, int x, int y)
+void	render_enemy(t_game *game)
 {
-	image->x = x;
-	image->y = y;
-	draw_image(game, image);
+	int	x;
+	int	y;
+
+	x = 0;
+	while (game->map[x])
+	{
+		y = 0;
+		while (game->map[x][y])
+		{
+			if (game->map[x][y] == 'B')
+				render(game, &game->image_bonus.bomb, x, y);
+			y++;
+		}
+		x++;
+	}
 }
 
-int	render_map(t_game *game)
+void	render_default_map(t_game *game)
 {
 	int	x;
 	int	y;
@@ -56,6 +75,12 @@ int	render_map(t_game *game)
 		}
 		x++;
 	}
+}
+
+int	render_map(t_game *game)
+{
+	render_default_map(game);
 	render_moves(game);
+	render_enemy(game);
 	return (0);
 }

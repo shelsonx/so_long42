@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 04:37:29 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 20:00:11 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/08 04:34:26 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 void	down(t_game *game)
 {
-	if (game->map[game->tux.x + 1][game->tux.y] == 'E' &&
+	if (game->map[game->tux.x + 1][game->tux.y] == 'B')
+	{
+		finalize_player(game);
+		exit_game(game);
+	}
+	else if (game->map[game->tux.x + 1][game->tux.y] == 'E' &&
 			game->collectibles == 0)
 	{
 		finalize_player(game);
@@ -33,7 +38,12 @@ void	down(t_game *game)
 
 void	up(t_game *game)
 {
-	if (game->map[game->tux.x - 1][game->tux.y] == 'E' &&
+	if (game->map[game->tux.x - 1][game->tux.y] == 'B')
+	{
+		finalize_player(game);
+		exit_game(game);
+	}
+	else if (game->map[game->tux.x - 1][game->tux.y] == 'E' &&
 			game->collectibles == 0)
 	{
 		finalize_player(game);
@@ -52,7 +62,12 @@ void	up(t_game *game)
 
 void	right(t_game *game)
 {
-	if (game->map[game->tux.x][game->tux.y + 1] == 'E' &&
+	if (game->map[game->tux.x][game->tux.y + 1] == 'B')
+	{
+		finalize_player(game);
+		exit_game(game);
+	}
+	else if (game->map[game->tux.x][game->tux.y + 1] == 'E' &&
 			game->collectibles == 0)
 	{
 		game->moves++;
@@ -72,7 +87,12 @@ void	right(t_game *game)
 
 void	left(t_game *game)
 {
-	if (game->map[game->tux.x][game->tux.y - 1] == 'E' &&
+	if (game->map[game->tux.x][game->tux.y - 1] == 'B')
+	{
+		finalize_player(game);
+		exit_game(game);
+	}
+	else if (game->map[game->tux.x][game->tux.y - 1] == 'E' &&
 			game->collectibles == 0)
 	{
 		finalize_player(game);

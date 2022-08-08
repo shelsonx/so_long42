@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 20:35:48 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/07 23:29:06 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define PATH_IMG_TUX_UP "assets/images/tux_up.xpm"
 # define PATH_IMG_TUX_DOWN "assets/images/tux_down.xpm"
 # define PATH_IMG_BACK_MOVE "assets/images/back_move.xpm"
+# define PATH_IMG_BOMB "assets/images/bomb.xpm"
 
 # define KEY_ESC		0xff1b
 # define KEY_LEFT		0xff51
@@ -61,6 +62,7 @@ typedef struct s_window
 typedef struct s_image_bonus
 {
 	t_image		back_move;
+	t_image		bomb;
 }	t_image_bonus;
 
 typedef struct s_game
