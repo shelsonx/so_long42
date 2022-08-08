@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 23:29:06 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/08 14:25:00 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define PATH_IMG_TUX_DOWN "assets/images/tux_down.xpm"
 # define PATH_IMG_BACK_MOVE "assets/images/back_move.xpm"
 # define PATH_IMG_BOMB "assets/images/bomb.xpm"
+# define PATH_IMG_GAME_OVER "assets/images/game_over.xpm"
 
 # define KEY_ESC		0xff1b
 # define KEY_LEFT		0xff51
@@ -63,6 +64,7 @@ typedef struct s_image_bonus
 {
 	t_image		back_move;
 	t_image		bomb;
+	t_image		game_over;
 }	t_image_bonus;
 
 typedef struct s_game
@@ -71,6 +73,7 @@ typedef struct s_game
 	char			**map;
 	int				moves;
 	int				collectibles;
+	int				end_game;
 	t_image_bonus	image_bonus;
 	t_window		window;
 	t_image			wall;
@@ -116,5 +119,6 @@ void		finalize_player(t_game *game);
 void		init_game(t_game *game);
 int			exit_game(t_game *game);
 void		init_window(t_game *game);
+void		game_over(t_game *game);
 
 #endif

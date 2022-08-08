@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 04:37:29 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/08 04:34:26 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/08 14:38:35 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 void	down(t_game *game)
 {
 	if (game->map[game->tux.x + 1][game->tux.y] == 'B')
-	{
-		finalize_player(game);
-		exit_game(game);
-	}
-	else if (game->map[game->tux.x + 1][game->tux.y] == 'E' &&
+		game_over(game);
+	if (game->map[game->tux.x + 1][game->tux.y] == 'E' &&
 			game->collectibles == 0)
 	{
 		finalize_player(game);
 		exit_game(game);
 	}
 	else if (game->map[game->tux.x + 1][game->tux.y] != '1' &&
-			game->map[game->tux.x + 1][game->tux.y] != 'E')
+			game->map[game->tux.x + 1][game->tux.y] != 'E' &&
+			game->end_game == 0)
 	{
 		if (game->map[game->tux.x + 1][game->tux.y] == 'C')
 			game->collectibles--;
@@ -39,10 +37,7 @@ void	down(t_game *game)
 void	up(t_game *game)
 {
 	if (game->map[game->tux.x - 1][game->tux.y] == 'B')
-	{
-		finalize_player(game);
-		exit_game(game);
-	}
+		game_over(game);
 	else if (game->map[game->tux.x - 1][game->tux.y] == 'E' &&
 			game->collectibles == 0)
 	{
@@ -50,7 +45,8 @@ void	up(t_game *game)
 		exit_game(game);
 	}
 	else if (game->map[game->tux.x - 1][game->tux.y] != '1' &&
-			game->map[game->tux.x - 1][game->tux.y] != 'E')
+			game->map[game->tux.x - 1][game->tux.y] != 'E' &&
+			game->end_game == 0)
 	{
 		if (game->map[game->tux.x - 1][game->tux.y] == 'C')
 			game->collectibles--;
@@ -63,10 +59,7 @@ void	up(t_game *game)
 void	right(t_game *game)
 {
 	if (game->map[game->tux.x][game->tux.y + 1] == 'B')
-	{
-		finalize_player(game);
-		exit_game(game);
-	}
+		game_over(game);
 	else if (game->map[game->tux.x][game->tux.y + 1] == 'E' &&
 			game->collectibles == 0)
 	{
@@ -75,7 +68,8 @@ void	right(t_game *game)
 		exit_game(game);
 	}
 	else if (game->map[game->tux.x][game->tux.y + 1] != '1' &&
-			game->map[game->tux.x][game->tux.y + 1] != 'E')
+			game->map[game->tux.x][game->tux.y + 1] != 'E' &&
+			game->end_game == 0)
 	{
 		if (game->map[game->tux.x][game->tux.y + 1] == 'C')
 			game->collectibles--;
@@ -88,10 +82,7 @@ void	right(t_game *game)
 void	left(t_game *game)
 {
 	if (game->map[game->tux.x][game->tux.y - 1] == 'B')
-	{
-		finalize_player(game);
-		exit_game(game);
-	}
+		game_over(game);
 	else if (game->map[game->tux.x][game->tux.y - 1] == 'E' &&
 			game->collectibles == 0)
 	{
@@ -99,7 +90,8 @@ void	left(t_game *game)
 		exit_game(game);
 	}
 	else if (game->map[game->tux.x][game->tux.y - 1] != '1' &&
-			game->map[game->tux.x][game->tux.y - 1] != 'E')
+			game->map[game->tux.x][game->tux.y - 1] != 'E' &&
+			game->end_game == 0)
 	{
 		if (game->map[game->tux.x][game->tux.y - 1] == 'C')
 			game->collectibles--;
@@ -122,6 +114,5 @@ int	events(int key, t_game *game)
 	else if (key == KEY_LEFT || key == KEY_A)
 		left(game);
 	render_map(game);
-	ft_printf("moves: %d\n", game->moves);
 	return (0);
 }

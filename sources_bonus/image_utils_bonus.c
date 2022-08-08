@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:32:55 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/08 00:09:08 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/08 12:58:41 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,21 @@ void	load_img_pos_tux(t_game *game, char *path)
 	game->tux.addr = mlx_xpm_file_to_image(
 			game->mlx_ptr, path,
 			&game->tux.width, &game->tux.height);
+}
+
+void	load_images_bonus(t_game *game)
+{
+	game->image_bonus.back_move.addr = mlx_xpm_file_to_image(
+			game->mlx_ptr, PATH_IMG_BACK_MOVE,
+			&game->image_bonus.back_move.width,
+			&game->image_bonus.back_move.height);
+	game->image_bonus.bomb.addr = mlx_xpm_file_to_image(
+			game->mlx_ptr, PATH_IMG_BOMB,
+			&game->image_bonus.bomb.width, &game->image_bonus.bomb.height);
+	game->image_bonus.game_over.addr = mlx_xpm_file_to_image(
+			game->mlx_ptr, PATH_IMG_GAME_OVER,
+			&game->image_bonus.game_over.width,
+			&game->image_bonus.game_over.height);
 }
 
 void	load_images(t_game *game)
@@ -37,13 +52,7 @@ void	load_images(t_game *game)
 	game->door.addr = mlx_xpm_file_to_image(
 			game->mlx_ptr, PATH_IMG_EXIT,
 			&game->door.width, &game->door.height);
-	game->image_bonus.back_move.addr = mlx_xpm_file_to_image(
-			game->mlx_ptr, PATH_IMG_BACK_MOVE,
-			&game->image_bonus.back_move.width,
-			&game->image_bonus.back_move.height);
-	game->image_bonus.bomb.addr = mlx_xpm_file_to_image(
-			game->mlx_ptr, PATH_IMG_BOMB,
-			&game->image_bonus.bomb.width, &game->image_bonus.bomb.height);
+	load_images_bonus(game);
 }
 
 void	draw_image(t_game *game, t_image *img)
