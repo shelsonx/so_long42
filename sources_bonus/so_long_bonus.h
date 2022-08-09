@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/08 14:25:00 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/09 02:58:11 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,20 @@
 # define DECREMENT 0
 
 # define SPRITE 32
-# define PATH_IMG_SPACE "assets/images/space.xpm"
-# define PATH_IMG_WALL "assets/images/wall.xpm"
-# define PATH_IMG_COIN_0 "assets/images/coin_0.xpm"
-# define PATH_IMG_EXIT "assets/images/exit.xpm"
-# define PATH_IMG_TUX_RIGHT "assets/images/tux_right.xpm"
-# define PATH_IMG_TUX_LEFT "assets/images/tux_left.xpm"
-# define PATH_IMG_TUX_UP "assets/images/tux_up.xpm"
-# define PATH_IMG_TUX_DOWN "assets/images/tux_down.xpm"
-# define PATH_IMG_BACK_MOVE "assets/images/back_move.xpm"
-# define PATH_IMG_BOMB "assets/images/bomb.xpm"
-# define PATH_IMG_GAME_OVER "assets/images/game_over.xpm"
+# define PATH_IMG_SPACE 		"assets/images/space.xpm"
+# define PATH_IMG_WALL 			"assets/images/wall.xpm"
+# define PATH_IMG_COIN_0 		"assets/images/coin_0.xpm"
+# define PATH_IMG_EXIT 			"assets/images/exit.xpm"
+# define PATH_IMG_TUX_RIGHT 	"assets/images/tux_right.xpm"
+# define PATH_IMG_TUX_LEFT 		"assets/images/tux_left.xpm"
+# define PATH_IMG_TUX_UP 		"assets/images/tux_up.xpm"
+# define PATH_IMG_TUX_DOWN 		"assets/images/tux_down.xpm"
+
+//path images bonus
+# define PATH_IMG_BACK_MOVE 	"assets/images/back_move.xpm"
+# define PATH_IMG_BOMB 			"assets/images/bomb.xpm"
+# define PATH_IMG_BOMB_1 		"assets/images/bomb_1.xpm"
+# define PATH_IMG_GAME_OVER 	"assets/images/game_over.xpm"
 
 # define KEY_ESC		0xff1b
 # define KEY_LEFT		0xff51
@@ -120,5 +123,8 @@ void		init_game(t_game *game);
 int			exit_game(t_game *game);
 void		init_window(t_game *game);
 void		game_over(t_game *game);
+
+//bonus animation
+int			animation(t_game *game);
 
 #endif
