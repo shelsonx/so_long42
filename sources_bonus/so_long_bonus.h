@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 15:49:52 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 17:39:11 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define DECREMENT 0
 
 # define SPRITE 32
-# define SPEED_ANIMATION 3000
+# define SPEED_ANIMATION 2000
 # define PATH_IMG_SPACE 		"assets/images/space.xpm"
 # define PATH_IMG_WALL 			"assets/images/wall.xpm"
 # define PATH_IMG_COIN_0 		"assets/images/coin_0.xpm"
@@ -38,9 +38,14 @@
 # define PATH_IMG_FLY_1 		"assets/images/fly_1.xpm"
 # define PATH_IMG_FLY_2 		"assets/images/fly_2.xpm"
 # define PATH_IMG_FLY_3 		"assets/images/fly_3.xpm"
-# define PATH_IMG_FLY_4 		"assets/images/fly_4.xpm"
 # define PATH_IMG_FLY_5 		"assets/images/fly_5.xpm"
-# define PATH_IMG_FLY_6 		"assets/images/fly_6.xpm"
+# define PATH_IMG_COIN_1 		"assets/images/coin_1.xpm"
+# define PATH_IMG_COIN_2 		"assets/images/coin_2.xpm"
+# define PATH_IMG_COIN_3		"assets/images/coin_3.xpm"
+# define PATH_IMG_COIN_4 		"assets/images/coin_4.xpm"
+# define PATH_IMG_COIN_5 		"assets/images/coin_5.xpm"
+# define PATH_IMG_COIN_6 		"assets/images/coin_6.xpm"
+# define PATH_IMG_COIN_7 		"assets/images/coin_7.xpm"
 # define PATH_IMG_GAME_OVER 	"assets/images/game_over.xpm"
 
 # define KEY_ESC		0xff1b
@@ -138,5 +143,12 @@ void		game_over(t_game *game);
 
 //bonus animation
 int			animation(t_game *game);
+
+//bonus animation utils
+void		swap_fly(t_game *game, char *path);
+void		swap_coin(t_game *game, char *path);
+void		update_frame(t_game *game);
+int			swap_coins(t_game *game, int frame);
+int			swap_flies(t_game *game, int frame);
 
 #endif
