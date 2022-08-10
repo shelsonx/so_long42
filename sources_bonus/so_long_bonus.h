@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 17:50:34 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 22:19:30 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ typedef struct s_game
 	int				end_game;
 	int				count_animations;
 	int				frame;
+	int				loops;
 	t_image_bonus	image_bonus;
 	t_window		window;
 	t_image			wall;

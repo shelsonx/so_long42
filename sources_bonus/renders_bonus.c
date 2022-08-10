@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:45:37 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/08 20:51:26 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 22:46:28 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ void	render_moves(t_game *game)
 	char	*moves;
 
 	moves = ft_itoa(game->moves);
-	mlx_put_image_to_window(game->mlx_ptr, game->window.win_ptr,
-		game->image_bonus.back_move.addr, game->window.width / 2 - 32, 10);
 	mlx_string_put(game->mlx_ptr, game->window.win_ptr,
-		game->window.width / 2 + 5, 22, 0xFFFFFF, moves);
+		game->door.y * SPRITE + 7, game->door.x * SPRITE + 24, 0xFFFFFF, moves);
 	free(moves);
 }
 
