@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 04:50:47 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 22:19:38 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 23:14:17 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	set_coin_to_space(t_game *game, char *path)
 void	game_over(t_game *game)
 {
 	set_coin_to_space(game, PATH_IMG_SPACE);
+	mlx_loop_hook(game->mlx_ptr, render_map, game);
 	load_img_pos_tux(game, PATH_IMG_GAME_OVER);
 	game->end_game = 1;
 }
