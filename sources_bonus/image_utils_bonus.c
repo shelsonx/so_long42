@@ -26,9 +26,9 @@ void	load_images_bonus(t_game *game)
 			game->mlx_ptr, PATH_IMG_BACK_MOVE,
 			&game->image_bonus.back_move.width,
 			&game->image_bonus.back_move.height);
-	game->image_bonus.bomb.addr = mlx_xpm_file_to_image(
+	game->image_bonus.fly.addr = mlx_xpm_file_to_image(
 			game->mlx_ptr, PATH_IMG_BOMB,
-			&game->image_bonus.bomb.width, &game->image_bonus.bomb.height);
+			&game->image_bonus.fly.width, &game->image_bonus.fly.height);
 	game->image_bonus.game_over.addr = mlx_xpm_file_to_image(
 			game->mlx_ptr, PATH_IMG_GAME_OVER,
 			&game->image_bonus.game_over.width,

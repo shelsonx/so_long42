@@ -43,7 +43,7 @@ void	render_enemy(t_game *game)
 		while (game->map[x][y])
 		{
 			if (game->map[x][y] == 'B')
-				render(game, &game->image_bonus.bomb, x, y);
+				render(game, &game->image_bonus.fly, x, y);
 			y++;
 		}
 		x++;

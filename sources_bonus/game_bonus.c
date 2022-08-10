@@ -21,7 +21,7 @@ int	exit_game(t_game *game)
 	mlx_destroy_image(game->mlx_ptr, game->space.addr);
 	mlx_destroy_image(game->mlx_ptr, game->wall.addr);
 	mlx_destroy_image(game->mlx_ptr, game->image_bonus.back_move.addr);
-	mlx_destroy_image(game->mlx_ptr, game->image_bonus.bomb.addr);
+	mlx_destroy_image(game->mlx_ptr, game->image_bonus.fly.addr);
 	mlx_destroy_image(game->mlx_ptr, game->image_bonus.game_over.addr);
 	mlx_destroy_window(game->mlx_ptr, game->window.win_ptr);
 	mlx_destroy_display(game->mlx_ptr);
@@ -51,6 +51,7 @@ void	init_game(t_game *game)
 	load_images(game);
 	game->moves = 0;
 	game->end_game = 0;
+	game->count_animations = 0;
 	game->collectibles = get_qtd_character(game->map, 'C');
 	mlx_expose_hook(game->window.win_ptr, &render_map, game);
 	mlx_hook(game->window.win_ptr, 2, 1L << 0, &events, game);

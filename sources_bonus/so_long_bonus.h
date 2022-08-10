@@ -22,6 +22,7 @@
 # define DECREMENT 0
 
 # define SPRITE 32
+# define SPEED_ANIMATION 7000
 # define PATH_IMG_SPACE 		"assets/images/space.xpm"
 # define PATH_IMG_WALL 			"assets/images/wall.xpm"
 # define PATH_IMG_COIN_0 		"assets/images/coin_0.xpm"
@@ -33,8 +34,13 @@
 
 //path images bonus
 # define PATH_IMG_BACK_MOVE 	"assets/images/back_move.xpm"
-# define PATH_IMG_BOMB 			"assets/images/bomb.xpm"
-# define PATH_IMG_BOMB_1 		"assets/images/bomb_1.xpm"
+# define PATH_IMG_BOMB 			"assets/images/fly.xpm"
+# define PATH_IMG_FLY_1 		"assets/images/fly_1.xpm"
+# define PATH_IMG_FLY_2 		"assets/images/fly_2.xpm"
+# define PATH_IMG_FLY_3 		"assets/images/fly_3.xpm"
+# define PATH_IMG_FLY_4 		"assets/images/fly_4.xpm"
+# define PATH_IMG_FLY_5 		"assets/images/fly_5.xpm"
+# define PATH_IMG_FLY_6 		"assets/images/fly_6.xpm"
 # define PATH_IMG_GAME_OVER 	"assets/images/game_over.xpm"
 
 # define KEY_ESC		0xff1b
@@ -66,7 +72,7 @@ typedef struct s_window
 typedef struct s_image_bonus
 {
 	t_image		back_move;
-	t_image		bomb;
+	t_image		fly;
 	t_image		game_over;
 }	t_image_bonus;
 
@@ -77,6 +83,8 @@ typedef struct s_game
 	int				moves;
 	int				collectibles;
 	int				end_game;
+	int				count_animations;
+	int				frame;
 	t_image_bonus	image_bonus;
 	t_window		window;
 	t_image			wall;
@@ -106,6 +114,10 @@ void		draw_image(t_game *game, t_image *img);
 
 //renders
 int			render_map(t_game *game);
+void		render(t_game *game, t_image *image, int x, int y);
+void		render_default_map(t_game *game);
+void		render_moves(t_game *game);
+void		render_enemy(t_game *game);
 
 //events
 int			events(int key, t_game *game);
