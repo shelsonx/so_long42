@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:32:55 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/08 18:42:36 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 15:52:28 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	load_images_bonus(t_game *game)
 			&game->image_bonus.back_move.width,
 			&game->image_bonus.back_move.height);
 	game->image_bonus.fly.addr = mlx_xpm_file_to_image(
-			game->mlx_ptr, PATH_IMG_BOMB,
+			game->mlx_ptr, PATH_IMG_FLY,
 			&game->image_bonus.fly.width, &game->image_bonus.fly.height);
 	game->image_bonus.game_over.addr = mlx_xpm_file_to_image(
 			game->mlx_ptr, PATH_IMG_GAME_OVER,

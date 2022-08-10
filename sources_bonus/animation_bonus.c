@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 18:33:53 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 15:18:56 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 15:55:45 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	update_frame(t_game *game)
 static int	swap_flies(t_game *game, int frame)
 {
 	if (game->frame == 1)
-		swap_fly(game, PATH_IMG_FLY_1);
+		swap_fly(game, PATH_IMG_FLY);
 	else if (game->frame == 2)
 		swap_fly(game, PATH_IMG_FLY_2);
 	else if (game->frame == 3)

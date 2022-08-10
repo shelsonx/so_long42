@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 15:21:21 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 15:49:52 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 
 //path images bonus
 # define PATH_IMG_BACK_MOVE 	"assets/images/back_move.xpm"
-# define PATH_IMG_BOMB 			"assets/images/fly.xpm"
+# define PATH_IMG_FLY 			"assets/images/fly.xpm"
 # define PATH_IMG_FLY_1 		"assets/images/fly_1.xpm"
 # define PATH_IMG_FLY_2 		"assets/images/fly_2.xpm"
 # define PATH_IMG_FLY_3 		"assets/images/fly_3.xpm"
