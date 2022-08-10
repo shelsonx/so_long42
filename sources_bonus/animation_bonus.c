@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 18:33:53 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/09 16:25:50 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 15:18:56 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ static int	swap_flies(t_game *game, int frame)
 		swap_fly(game, PATH_IMG_FLY_6);
 	return (frame);
 }
-
 
 int	animation(t_game *game)
 {

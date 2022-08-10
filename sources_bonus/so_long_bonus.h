@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/09 02:58:11 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 15:21:21 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define DECREMENT 0
 
 # define SPRITE 32
-# define SPEED_ANIMATION 7000
+# define SPEED_ANIMATION 3000
 # define PATH_IMG_SPACE 		"assets/images/space.xpm"
 # define PATH_IMG_WALL 			"assets/images/wall.xpm"
 # define PATH_IMG_COIN_0 		"assets/images/coin_0.xpm"
