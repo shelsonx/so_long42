@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 04:50:47 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 15:34:31 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 16:01:23 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	init_window(t_game *game)
 {
 	game->window = get_window_size(game->map);
 	game->window.win_ptr = mlx_new_window(
-			game->mlx_ptr, game->window.width, game->window.height, "So Long");
+			game->mlx_ptr, game->window.width,
+			game->window.height, "MINI SUPERTUX");
 	if (game->window.win_ptr == NULL)
 	{
 		free(game->window.win_ptr);
