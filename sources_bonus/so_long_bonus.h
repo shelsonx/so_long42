@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 17:39:11 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 17:50:34 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@
 # define PATH_IMG_BACK_MOVE 	"assets/images/back_move.xpm"
 # define PATH_IMG_FLY 			"assets/images/fly.xpm"
 # define PATH_IMG_FLY_1 		"assets/images/fly_1.xpm"
-# define PATH_IMG_FLY_2 		"assets/images/fly_2.xpm"
-# define PATH_IMG_FLY_3 		"assets/images/fly_3.xpm"
 # define PATH_IMG_FLY_5 		"assets/images/fly_5.xpm"
 # define PATH_IMG_COIN_1 		"assets/images/coin_1.xpm"
 # define PATH_IMG_COIN_2 		"assets/images/coin_2.xpm"

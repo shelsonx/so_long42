@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 17:16:00 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 17:32:40 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/10 17:48:57 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ int	swap_flies(t_game *game, int frame)
 	else if (game->frame == 2)
 		swap_fly(game, PATH_IMG_FLY_1);
 	else if (game->frame == 3)
-		swap_fly(game, PATH_IMG_FLY_2);
-	else if (game->frame == 4)
-		swap_fly(game, PATH_IMG_FLY_3);
-	else if (game->frame == 5)
-		swap_fly(game, PATH_IMG_FLY_5);
-	else if (game->frame == 6)
 		swap_fly(game, PATH_IMG_FLY);
-	else if (game->frame == 7)
+	else if (game->frame == 4)
 		swap_fly(game, PATH_IMG_FLY_1);
+	else if (game->frame == 5)
+		swap_fly(game, PATH_IMG_FLY);
+	else if (game->frame == 6)
+		swap_fly(game, PATH_IMG_FLY_1);
+	else if (game->frame == 7)
+		swap_fly(game, PATH_IMG_FLY_5);
 	return (frame);
 }
