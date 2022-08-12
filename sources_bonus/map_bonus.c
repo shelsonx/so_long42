@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 22:51:04 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/12 16:51:47 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 20:04:37 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	is_valid_wall(char **map)
 	i = 0;
 	while (first_line[i] && last_line[i])
 	{
-		if (first_line[i] != '1' || last_line[1] != '1')
+		if (first_line[i] != '1' || last_line[i] != '1')
 			return (FALSE);
 		i++;
 	}
