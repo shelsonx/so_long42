@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/12 16:16:10 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 16:50:55 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ void		load_img_pos_tux(t_game *game, char *path);
 void		load_images(t_game *game);
 void		draw_image(t_game *game, t_image *img);
 void		set_enemies_game_over(t_game *game, char *path);
+int			is_valid_characters(char **map);
 
 //renders
 int			render_map(t_game *game);

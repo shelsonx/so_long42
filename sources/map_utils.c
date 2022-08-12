@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 06:57:51 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/05 19:56:18 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 16:48:30 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,25 @@ t_window	get_window_size(char **map)
 	window.width = ft_strlen(map[0]) * SPRITE;
 	window.height = num_rows(map) * SPRITE;
 	return (window);
+}
+
+int	is_valid_characters(char **map)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	while (map[x])
+	{
+		y = 0;
+		while (map[x][y])
+		{
+			if (map[x][y] != '0' && map[x][y] != '1' && map[x][y] != 'C' &&
+				map[x][y] != 'E' && map[x][y] != 'P')
+				return (FALSE);
+			y++;
+		}
+		x++;
+	}
+	return (TRUE);
 }

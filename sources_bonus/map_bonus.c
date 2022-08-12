@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 22:51:04 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/07 20:00:40 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 16:51:47 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,8 @@ int	is_valid_map(char **map)
 	if (get_qtd_character(map, 'P') != 1)
 		return (FALSE);
 	if (get_qtd_character(map, 'E') < 1 || get_qtd_character(map, 'C') < 1)
+		return (FALSE);
+	if (is_valid_characters(map) == FALSE)
 		return (FALSE);
 	return (TRUE);
 }
