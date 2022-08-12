@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 22:19:30 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 12:13:32 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,4 +150,8 @@ void		update_frame(t_game *game);
 int			swap_coins(t_game *game, int frame);
 int			swap_flies(t_game *game, int frame);
 
+//bonus moves
+void		enemy_left(t_game *game);
+void		enemy_right(t_game *game);
+void		swap_enemies(t_game *game, int direction);
 #endif

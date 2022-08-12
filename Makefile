@@ -3,7 +3,7 @@ SRCS_FILES			= image_utils.c map_utils.c map.c renders.c so_long.c \
 
 SRCS_FILES_BONUS	= image_utils_bonus.c map_utils_bonus.c map_bonus.c renders_bonus.c \
 						so_long_bonus.c events_bonus.c events_utils_bonus.c game_bonus.c \
-						animation_bonus.c animation_utils_bonus.c
+						animation_bonus.c animation_utils_bonus.c move_enemies.c
 
 SRCS_DIR			= sources
 
