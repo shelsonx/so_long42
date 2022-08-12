@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:25:13 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/08 13:10:32 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 14:07:22 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,10 @@ void	swap_play_for_space(t_game *game, char coord, int move)
 void	finalize_player(t_game *game)
 {
 	game->map[game->tux.x][game->tux.y] = '0';
+}
+
+void	swap_position(char *current, char *next, char old, char new)
+{
+	*current = new;
+	*next = old;
 }

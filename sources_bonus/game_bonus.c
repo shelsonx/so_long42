@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 04:50:47 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 23:14:17 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 14:12:04 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,13 @@ void	init_game(t_game *game)
 	game->end_game = 0;
 	game->count_animations = 0;
 	game->frame = 0;
-	game->loops = 0;
+	game->movement = 0;
+	game->moves_enemies = 0;
 	game->collectibles = get_qtd_character(game->map, 'C');
 	mlx_expose_hook(game->window.win_ptr, &render_map, game);
 	mlx_hook(game->window.win_ptr, 2, 1L << 0, &events, game);
 	mlx_hook(game->window.win_ptr, 17, 0, &exit_game, game);
-	mlx_loop_hook(game->mlx_ptr, &animation, game);
+	mlx_loop_hook(game->mlx_ptr, &loop_hook, game);
 	mlx_loop(game->mlx_ptr);
 }
 

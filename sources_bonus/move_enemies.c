@@ -6,17 +6,11 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 21:52:41 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/12 13:03:32 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 14:08:47 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
-void	swap_position(char *current, char *next, char old, char new)
-{
-	*current = new;
-	*next = old;
-}
 
 void	swap_enemy_for_space(t_game *game, int direction, int x, int y)
 {
@@ -40,7 +34,7 @@ void	swap_enemies(t_game *game, int direction)
 {
 	int	x;
 	int	y;
-	
+
 	x = 0;
 	while (game->map[x])
 	{
@@ -55,33 +49,37 @@ void	swap_enemies(t_game *game, int direction)
 	}
 }
 
-/* void	load_img_pos_enemy(t_game *game, char *path)
+void	swap_direction(t_game *game)
 {
-	mlx_destroy_image(game->mlx_ptr, game->image_bonus.fly.addr);
-	game->image_bonus.fly.addr = mlx_xpm_file_to_image(
-			game->mlx_ptr, path,
-			&game->image_bonus.fly.width, &game->image_bonus.fly.height);
+	if (game->movement == 1)
+		swap_enemies(game, DECREMENT);
+	else if (game->movement == 2)
+		swap_enemies(game, DECREMENT);
+	else if (game->movement == 3)
+		swap_enemies(game, DECREMENT);
+	else if (game->movement == 4)
+		swap_enemies(game, INCREMENT);
+	else if (game->movement == 5)
+		swap_enemies(game, INCREMENT);
 }
 
-void	enemy_left(t_game *game)
+void	update_movement(t_game *game)
 {
-	if (game->map[game->image_bonus.fly.x][game->image_bonus.fly.y - 1] == 'P')
-		game_over(game);
-	else if (game->map[game->image_bonus.fly.x][game->image_bonus.fly.y - 1] == '0')
-	{
-		//load_img_pos_enemy(game, PATH_IMG_FLY);
-		swap_enemies(game, 'y', DECREMENT);
-	}
+	if (game->movement < 6)
+		game->movement++;
+	else
+		game->movement = 1;
 }
 
-void	enemy_right(t_game *game)
+void	moves(t_game *game)
 {
-	if (game->map[game->image_bonus.fly.x][game->image_bonus.fly.y + 1] == 'P')
-		game_over(game);
-	else if (game->map[game->image_bonus.fly.x][game->image_bonus.fly.y + 1] == '0')
+	if (game->moves_enemies < SPEED_MOVE_ENEMY)
 	{
-		//load_img_pos_enemy(game, PATH_IMG_FLY);
-		swap_enemies(game, 'y', INCREMENT);
+		game->moves_enemies++;
+		return ;
 	}
+	game->moves_enemies = 0;
+	update_movement(game);
+	swap_direction(game);
+	render_map(game);
 }
- */

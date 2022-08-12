@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/12 12:13:32 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 14:09:56 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 
 # define SPRITE 32
 # define SPEED_ANIMATION 2000
+# define SPEED_MOVE_ENEMY 9000
 # define PATH_IMG_SPACE 		"assets/images/space.xpm"
 # define PATH_IMG_WALL 			"assets/images/wall.xpm"
 # define PATH_IMG_COIN_0 		"assets/images/coin_0.xpm"
@@ -87,8 +88,9 @@ typedef struct s_game
 	int				collectibles;
 	int				end_game;
 	int				count_animations;
+	int				moves_enemies;
+	int				movement;
 	int				frame;
-	int				loops;
 	t_image_bonus	image_bonus;
 	t_window		window;
 	t_image			wall;
@@ -133,6 +135,7 @@ void		left(t_game *game);
 //events utils
 void		swap_play_for_space(t_game *game, char coord, int move);
 void		finalize_player(t_game *game);
+void		swap_position(char *current, char *next, char old, char new);
 
 //game
 void		init_game(t_game *game);
@@ -141,17 +144,17 @@ void		init_window(t_game *game);
 void		game_over(t_game *game);
 
 //bonus animation
-int			animation(t_game *game);
+void		animation(t_game *game);
 
 //bonus animation utils
 void		swap_fly(t_game *game, char *path);
 void		swap_coin(t_game *game, char *path);
 void		update_frame(t_game *game);
 int			swap_coins(t_game *game, int frame);
-int			swap_flies(t_game *game, int frame);
+void		swap_flies(t_game *game);
 
 //bonus moves
-void		enemy_left(t_game *game);
-void		enemy_right(t_game *game);
 void		swap_enemies(t_game *game, int direction);
+void		moves(t_game *game);
+int			loop_hook(t_game *game);
 #endif
