@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 17:16:00 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/12 13:50:54 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 14:48:09 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ void	swap_coin(t_game *game, char *path)
 
 void	update_frame(t_game *game)
 {
-	if (game->frame < 8)
+	if (game->frame < 9)
 		game->frame++;
 	else
 		game->frame = 1;
 }
 
-int	swap_coins(t_game *game, int frame)
+void	swap_coins(t_game *game)
 {
 	if (game->frame == 1)
 		swap_coin(game, PATH_IMG_COIN_1);
@@ -52,7 +52,8 @@ int	swap_coins(t_game *game, int frame)
 		swap_coin(game, PATH_IMG_COIN_6);
 	else if (game->frame == 7)
 		swap_coin(game, PATH_IMG_COIN_7);
-	return (frame);
+	else if (game->frame == 8)
+		swap_coin(game, PATH_IMG_COIN_0);
 }
 
 void	swap_flies(t_game *game)
@@ -71,4 +72,6 @@ void	swap_flies(t_game *game)
 		swap_fly(game, PATH_IMG_FLY_1);
 	else if (game->frame == 7)
 		swap_fly(game, PATH_IMG_FLY);
+	else if (game->frame == 8)
+		swap_fly(game, PATH_IMG_FLY_5);
 }

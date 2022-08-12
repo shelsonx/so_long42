@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/12 14:09:56 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 14:58:56 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define FALSE 0
 # define INCREMENT 1
 # define DECREMENT 0
+# define DOWN_ENEMY 1
+# define UP_ENEMY 0
 
 # define SPRITE 32
 # define SPEED_ANIMATION 2000
@@ -150,7 +152,7 @@ void		animation(t_game *game);
 void		swap_fly(t_game *game, char *path);
 void		swap_coin(t_game *game, char *path);
 void		update_frame(t_game *game);
-int			swap_coins(t_game *game, int frame);
+void		swap_coins(t_game *game);
 void		swap_flies(t_game *game);
 
 //bonus moves

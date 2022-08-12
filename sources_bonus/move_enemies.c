@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 21:52:41 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/12 14:08:47 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 15:15:16 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	swap_enemy_for_space(t_game *game, int direction, int x, int y)
 {
-	if (direction == INCREMENT)
+	if (direction == DOWN_ENEMY)
 	{
 		if (game->map[x][y] == 'B' && game->map[x + 1][y] == '0')
 			swap_position(&game->map[x][y], &game->map[x + 1][y], 'B', '0');
 		else if (game->map[x][y] == 'B' && game->map[x + 1][y] == 'P')
 			game_over(game);
 	}
-	else if (direction == DECREMENT)
+	else if (direction == UP_ENEMY)
 	{
 		if (game->map[x][y] == 'B' && game->map[x - 1][y] == '0')
 			swap_position(&game->map[x][y], &game->map[x - 1][y], 'B', '0');
@@ -52,15 +52,15 @@ void	swap_enemies(t_game *game, int direction)
 void	swap_direction(t_game *game)
 {
 	if (game->movement == 1)
-		swap_enemies(game, DECREMENT);
+		swap_enemies(game, UP_ENEMY);
 	else if (game->movement == 2)
-		swap_enemies(game, DECREMENT);
+		swap_enemies(game, UP_ENEMY);
 	else if (game->movement == 3)
-		swap_enemies(game, DECREMENT);
+		swap_enemies(game, UP_ENEMY);
 	else if (game->movement == 4)
-		swap_enemies(game, INCREMENT);
+		swap_enemies(game, DOWN_ENEMY);
 	else if (game->movement == 5)
-		swap_enemies(game, INCREMENT);
+		swap_enemies(game, DOWN_ENEMY);
 }
 
 void	update_movement(t_game *game)
