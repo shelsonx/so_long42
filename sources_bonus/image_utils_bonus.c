@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:32:55 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/10 16:47:32 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 16:14:26 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@ void	load_img_pos_tux(t_game *game, char *path)
 	game->tux.addr = mlx_xpm_file_to_image(
 			game->mlx_ptr, path,
 			&game->tux.width, &game->tux.height);
+}
+
+void	set_enemies_game_over(t_game *game, char *path)
+{
+	mlx_destroy_image(game->mlx_ptr, game->image_bonus.fly.addr);
+	game->image_bonus.fly.addr = mlx_xpm_file_to_image(
+			game->mlx_ptr, path,
+			&game->image_bonus.fly.width, &game->image_bonus.fly.height);
 }
 
 void	load_images_bonus(t_game *game)

@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/12 14:58:56 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/12 16:16:10 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ int			is_ext_valid(char *filename);
 void		load_img_pos_tux(t_game *game, char *path);
 void		load_images(t_game *game);
 void		draw_image(t_game *game, t_image *img);
+void		set_enemies_game_over(t_game *game, char *path);
 
 //renders
 int			render_map(t_game *game);
