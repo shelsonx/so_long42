@@ -27,7 +27,7 @@ RM 					= rm -f
 
 CC					= clang	
 
-CFLAGS 				= -Wall -Wextra -Werror
+CFLAGS 				= -Wall -Wextra -Werror -g
 MINILIBX_FLAGS		= -L. -lXext -L. -lX11
 
 NAME				= so_long
@@ -38,10 +38,10 @@ all:				$(NAME)
 bonus:				$(NAME_BONUS)
 
 $(NAME):			$(LIBFT) $(MINILIBX) $(OBJS)
-					$(CC) -g3 $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME)
+					$(CC)  $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME)
 
 $(NAME_BONUS):		$(LIBFT) $(MINILIBX) $(OBJS_BONUS)
-					$(CC) -g3 $(CFLAGS) $(OBJS_BONUS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME_BONUS)
+					$(CC)  $(CFLAGS) $(OBJS_BONUS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME_BONUS)
 
 $(LIBFT):			
 					$(MAKE) -C $(LIBFT_DIR)
