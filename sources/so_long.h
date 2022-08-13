@@ -109,4 +109,8 @@ void		init_game(t_game *game);
 int			exit_game(t_game *game);
 void		init_window(t_game *game);
 
+//file
+char		*get_lines_map(char *path);
+int			is_empty_line(char *lines);
+int			valid_file(char *path);
 #endif
