@@ -20,6 +20,11 @@ int	main(int argc, char **argv)
 	{
 		if (!is_ext_valid(argv[1]))
 			ft_printf("Error\nFile Extension Invalid!\n");
+		else if (!valid_file(argv[1]))
+		{
+			ft_printf("Error\nEmpty Line!\n");
+			return (1);
+		}
 		else
 		{
 			game.map = generate_map(argv[1]);
