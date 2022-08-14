@@ -1,5 +1,5 @@
 SRCS_FILES			= image_utils.c map_utils.c map.c renders.c so_long.c \
-							events.c events_utils.c game.c file_valid.c
+							events.c events_utils.c game.c
 
 SRCS_FILES_BONUS	= image_utils_bonus.c map_utils_bonus.c map_bonus.c renders_bonus.c \
 						so_long_bonus.c events_bonus.c events_utils_bonus.c game_bonus.c \
@@ -27,7 +27,7 @@ RM 					= rm -f
 
 CC					= clang	
 
-CFLAGS 				= -Wall -Wextra -Werror
+CFLAGS 				= -Wall -Wextra -Werror -g
 MINILIBX_FLAGS		= -L. -lXext -L. -lX11
 
 NAME				= so_long
@@ -38,10 +38,10 @@ all:				$(NAME)
 bonus:				$(NAME_BONUS)
 
 $(NAME):			$(LIBFT) $(MINILIBX) $(OBJS)
-					$(CC) -g3 $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME)
+					$(CC)  $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME)
 
 $(NAME_BONUS):		$(LIBFT) $(MINILIBX) $(OBJS_BONUS)
-					$(CC) -g3 $(CFLAGS) $(OBJS_BONUS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME_BONUS)
+					$(CC)  $(CFLAGS) $(OBJS_BONUS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME_BONUS)
 
 $(LIBFT):			
 					$(MAKE) -C $(LIBFT_DIR)
