@@ -33,7 +33,7 @@ and deal with map validations, keyboard events, animations... So that the
 <li>run make bonus to build with bonus</li>
     <strong>make bonus</strong>
 <li>run game</li>
-    <strong>./so_long_bonus "assets/maps/bonus/map4.ber"</strong>
+    <strong>./so_long_bonus assets/maps/bonus/map4.ber</strong>
 <li>clean objects</li>
     <strong>make clean</strong>
 </ol>
