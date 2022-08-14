@@ -6,7 +6,7 @@
 /*   By: sjhony-x <sjhony-x@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:46:36 by sjhony-x          #+#    #+#             */
-/*   Updated: 2022/08/12 16:48:47 by sjhony-x         ###   ########.fr       */
+/*   Updated: 2022/08/14 11:52:57 by sjhony-x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,4 @@ void		init_game(t_game *game);
 int			exit_game(t_game *game);
 void		init_window(t_game *game);
 
-//file
-char		*get_lines_map(char *path);
-int			is_empty_line(char *lines);
-int			valid_file(char *path);
 #endif
